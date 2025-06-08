@@ -28,10 +28,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: ${{ vars.AWS_REGION }}
 
-      - name: View inside file ecs-task-definition.json
-        run: |
-          cat ./deploy/ecs-task-definition.json
-
       - name: Terraform | Setup
         uses: hashicorp/setup-terraform@v3
         with:
