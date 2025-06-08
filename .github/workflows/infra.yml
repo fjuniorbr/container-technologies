@@ -8,6 +8,7 @@ on:
 env:
   DESTROY: false
   TF_VERSION: 1.10.5
+  TF_LINT_VERSION: v0.52.0
   IMAGE_NAME: ci-cd-app
   TAG_APP: v1.0.0
   ECS_SERVICE: app-service
@@ -15,14 +16,14 @@ env:
   ENVIRONMENT: prod
 
 jobs:
-  Build:
-    name: 'Building app'
+  terraform:
+    name: 'Deploy Infra'
     runs-on: ubuntu-latest
 
     defaults:
       run:
         shell: bash
-        working-directory: app
+        working-directory: infra
 
     steps:
       - name: Download do Repositório
