@@ -43,7 +43,6 @@ jobs:
               }
             }" >> provider.tf
             cat provider.tf
-        working-directory: ./app/deploy
 
       - name: Terraform | Initialize backend
         run: terraform init
