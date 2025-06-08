@@ -57,7 +57,7 @@ jobs:
       - name: Terraform | Set up statefile S3 Bucket for Backend
         run: |
             echo "terraform {
-              required_version = "1.10.5"
+              required_version = \"1.10.5\"
               backend \"s3\" {
                 bucket   = \"${{ secrets.AWS_ACCOUNT_ID }}-tfstate\"
                 key      = \"app-${{ env.ENVIRONMENT }}.tfstate\"
