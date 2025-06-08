@@ -15,11 +15,6 @@ jobs:
   terraform:
     name: 'Deploy Infra'
     runs-on: ubuntu-latest
-  
-    defaults:
-      run:
-        shell: bash
-        working-directory: app
 
     steps:
       - name: Checkout
