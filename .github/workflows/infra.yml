@@ -13,7 +13,7 @@ jobs:
   terraform:
     name: 'Deploy Infra'
     runs-on: ubuntu-latest
-
+ 
     defaults:
       run:
         shell: bash
