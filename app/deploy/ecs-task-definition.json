@@ -1,8 +1,8 @@
 {
     "containerDefinitions": [
         {
-            "name": "ci-cd-app",
-            "image": "fjuniorbr/ci-cd-app:v1.0.0",
+            "name": "container-technologies",
+            "image": "fjuniorbr/container-technologies:v1.0.0-b1e4f5c",
             "cpu": 0,
             "portMappings": [
                 {
@@ -41,7 +41,7 @@
             }
         }
     ],
-    "family": "ci-cd-app",       
+    "family": "ci-cd-app",
     "taskRoleArn": "arn:aws:iam::579993130426:role/LabRole",
     "executionRoleArn": "arn:aws:iam::579993130426:role/LabRole",
     "networkMode": "awsvpc",

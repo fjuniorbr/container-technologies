@@ -9,13 +9,6 @@ data "aws_security_groups" "this" {
   }
 }
 
-data "aws_security_groups" "this" {
-  filter {
-    name   = "tag:Name"
-    values = ["app-prod-sg"]
-  }
-}
-
 data "aws_lb" "this" {
   name = var.lb_name
 }
@@ -36,7 +29,7 @@ resource "aws_ecs_service" "this" {
 
   load_balancer {
     target_group_arn = data.aws_lb_target_group.this.arn
-    container_name   = "ci-cd-app"
+    container_name   = "container-technologies"
     container_port   = 8000
   }
 }
