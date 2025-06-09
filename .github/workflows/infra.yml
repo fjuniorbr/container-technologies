@@ -10,7 +10,7 @@ env:
   TF_LINT_VERSION: v0.52.0
   DESTROY: true
   ENVIRONMENT: prod
-
+ 
 jobs:
   terraform:
     name: 'Deploy Infra'
