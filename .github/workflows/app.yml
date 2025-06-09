@@ -8,7 +8,7 @@ on:
 env:
   DESTROY: false
   TF_VERSION: 1.10.5
-  IMAGE_NAME: ${{ github.event.repository.name }}
+  IMAGE_NAME: ci-cd-app
   ECS_SERVICE: app-service
   ECS_CLUSTER: app-prod-cluster
   ENVIRONMENT: prod
@@ -17,8 +17,7 @@ jobs:
   Build:
     name: 'Building app'
     runs-on: ubuntu-latest
-    outputs:
-      image_tag: ${{ steps.set_tag.outputs.image_tag }}
+
     defaults:
       run:
         shell: bash
