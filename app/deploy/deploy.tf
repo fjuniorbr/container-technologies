@@ -9,6 +9,13 @@ data "aws_security_groups" "this" {
   }
 }
 
+data "aws_security_groups" "this" {
+  filter {
+    name   = "tag:Name"
+    values = ["app-prod-sg"]
+  }
+}
+
 data "aws_lb" "this" {
   name = var.lb_name
 }
