@@ -14,12 +14,13 @@ data "aws_lb" "this" {
 }
 
 resource "aws_ecs_service" "this" {
-  name                          = "app-service"
-  task_definition               = "ci-cd-app"
-  cluster                       = var.cluster_name
-  desired_count                 = var.desired_count
-  launch_type                   = "FARGATE"
+  name            = "app-service"
+  task_definition = "ci-cd-app"
+  cluster         = var.cluster_name
+  desired_count   = var.desired_count
+  launch_type     = "FARGATE"
   availability_zone_rebalancing = "ENABLED"
+
   network_configuration {
     subnets          = var.subnets_id
     security_groups  = data.aws_security_groups.this.ids
@@ -31,7 +32,6 @@ resource "aws_ecs_service" "this" {
     container_name   = "ci-cd-app"
     container_port   = 8000
   }
-
 }
 
 resource "aws_cloudwatch_log_group" "this" {
