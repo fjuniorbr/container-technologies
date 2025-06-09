@@ -1,4 +1,4 @@
-name: 'Deploy Infra' 
+name: 'Deploy Infra'
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 env:
   TF_VERSION: 1.10.5
   TF_LINT_VERSION: v0.52.0
-  DESTROY: false
+  DESTROY: true
   ENVIRONMENT: prod
 jobs:
   terraform:
